@@ -19,10 +19,8 @@
     "url": "https://github.com/connorrli/portfolio-site/issues"
   },
   "homepage": "https://github.com/connorrli/portfolio-site#readme",
-  "dependencies": {
-    "prettier": "^3.5.3"
-  },
   "devDependencies": {
+    "prettier": "^3.5.3",
     "pretty-quick": "^4.2.2",
     "simple-git-hooks": "^2.13.0"
   },
