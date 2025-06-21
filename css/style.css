@@ -5,6 +5,7 @@
     padding: 0px;
     margin: 0px;
     list-style: none;
+    overflow-x: hidden;
 }
 
 body {
@@ -91,7 +92,7 @@ a {
 /* HOME PAGE */
 
 #home-page {
-    width: clamp(512px, 40vw, 812px);
+    width: clamp(312px, 40vw, 812px);
 }
 
 #home-page #name-pfp img {
@@ -132,7 +133,7 @@ a {
 /* PROJECTS PAGE STYLING */
 
 #projects-page {
-    width: clamp(512px, 40vw, 812px);
+    width: clamp(312px, 40vw, 812px);
     text-align: center;
 }
 
