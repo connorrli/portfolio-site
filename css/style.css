@@ -67,7 +67,7 @@ a {
     background: #ffbad2;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.15s ease;
+    transition: transform 0.3s ease;
 }
 
 .active-nav-tab {
