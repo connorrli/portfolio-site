@@ -1,6 +1,12 @@
-function handleLoadNewPage(templateName) {
+const routes = {
+    "": "home-page",
+    "#home": "home-page",
+    "#projects": "projects-page"
+};
+
+function handleLoadNewPage() {
     unloadPageContent();
-    loadNewPageContent(templateName);
+    loadNewPageContent();
 }
 
 function unloadPageContent() {
@@ -11,20 +17,30 @@ function unloadPageContent() {
     });
 }
 
-function loadNewPageContent(templateName) {
-    const template = document.getElementById(templateName);
-    if (!template) {
-        console.error("Template not found: ", templateName);
+function loadNewPageContent() {
+    const pageName = routes[location.hash];
+
+    const page = document.getElementById(pageName);
+    if (!page) {
+        console.error("Unable to load page, invalid page name: ", pageName);
         return;
     }
 
-    const clone = template.content.cloneNode(true);
+    page.classList.remove("hidden");
 
-    const divWrapper = document.createElement("div");
-    divWrapper.classList.add("page");
-    divWrapper.appendChild(clone);
-
-    document.getElementById("page-content").appendChild(divWrapper);
+    updateActiveNavTab();
 }
 
-handleLoadNewPage("home-page-template");
+function updateActiveNavTab() {
+    document.querySelectorAll(".nav-tab").forEach(tab => {
+        if (tab.getAttribute("href") === location.hash) {
+            tab.classList.add("active-nav-tab");
+        } else {
+            tab.classList.remove("active-nav-tab");
+        }
+    });
+}
+
+window.addEventListener("hashchange", handleLoadNewPage);
+
+loadNewPageContent("home-page");
