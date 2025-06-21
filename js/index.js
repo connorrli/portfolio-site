@@ -4,6 +4,10 @@ const routes = {
     "#projects": "projects-page"
 };
 
+if (!location.hash) {
+    location.hash = "#home";
+}
+
 function handleLoadNewPage() {
     unloadPageContent();
     loadNewPageContent();
