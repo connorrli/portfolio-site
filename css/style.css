@@ -109,6 +109,10 @@ a {
     row-gap: 2vh;
 }
 
+#bio-hr {
+    display: none;
+}
+
 #home-page #about-me-blurb {
     display: flex;
     flex-direction: column;
@@ -145,4 +149,23 @@ a {
 
 .invisible {
     visibility: hidden;
+}
+
+@media (max-width: 512px) {
+    #page-content {
+        background-color: #e3e3e3;
+    }
+
+    #bio-hr {
+        display: block;
+        margin-bottom: 6vw;
+        color: inherit;
+    }
+
+    #socials {
+        background-color: #fefefe;
+        border-radius: 2vw;
+        padding: 3vw;
+        justify-content: space-between;
+    }
 }
